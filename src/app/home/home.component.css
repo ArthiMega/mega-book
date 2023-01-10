@@ -1,0 +1,11 @@
+body{
+    margin-left: 250px;
+    margin-right: 250px;
+}
+img {
+    width: 400px;
+    height: 500px;
+  }
+  ngb-rating{
+    font-size: 30px;
+  }
