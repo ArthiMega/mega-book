@@ -9,7 +9,7 @@ import { NavService } from '../service/nav.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public nav:NavService) {
+  constructor(public nav:NavService, private crudservice:CRUDService) {
     this.nav.show();
    }
 

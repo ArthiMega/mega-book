@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
       if(user){
         console.log(res);
         this.login.reset();
+        alert("Logged in successfully!")
         this.route.navigate(['home']);
       }
       else

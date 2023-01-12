@@ -35,7 +35,7 @@
               <div *ngIf="formValue.controls['conformpassword'].errors?.['required']">
                 This field is required.
               </div>
-              <div *ngIf="cpass.value != pass.value">
+              <div *ngIf="cpass.value !== pass.value">
                 It must match the password
               </div>
             </div>

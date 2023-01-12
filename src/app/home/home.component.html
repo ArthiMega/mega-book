@@ -1,8 +1,4 @@
-<ul>
-  <li *ngFor="let book of bookList">
-    {{book.id}}
-  </li>
-</ul>
+
 <body>
   <div *ngIf="nav.visible">
     <input
@@ -25,7 +21,7 @@
     </div>
     <div class="col-md-8">
        <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Some title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <p>{{123}} Views<span><i class="fa-solid fa-eye"></i></span></p>
         <br>
@@ -36,7 +32,7 @@
             <ngb-rating [max]="5" [rate]="4" ></ngb-rating>
           </div>
 
-        <a rrouterLink="/book" class="align-self-end btn btn-primary">Read Now</a>
+        <a routerLink="/book" class="align-self-end btn btn-primary">Read Now</a>
       </div>
     </div>
   </div>
@@ -53,6 +49,10 @@
         <p>{{123}} Views<span><i class="fa-solid fa-eye"></i></span></p>
         <br>
         <p>Price: {{123|currency:'INR'}}</p>
+        <div>
+          <label for="rating-inline">Rating:</label>
+          <ngb-rating [max]="5" [rate]="4" ></ngb-rating>
+        </div>
         <a routerLink="/book" class="btn btn-primary">Read Now</a>
       </div>
     </div>
@@ -70,6 +70,10 @@
         <p>{{123}} Views<span><i class="fa-solid fa-eye"></i></span></p>
         <br>
         <p>Price: {{123|currency:'INR'}}</p>
+        <div>
+          <label for="rating-inline">Rating:</label>
+          <ngb-rating [max]="5" [rate]="4" ></ngb-rating>
+        </div>
         <a routerLink="/book" class="btn btn-primary">Read Now</a>
       </div>
     </div>
@@ -87,6 +91,10 @@
         <p>{{123}} Views<span><i class="fa-solid fa-eye"></i></span></p>
         <br>
         <p>Price: {{123|currency:'INR'}}</p>
+        <div>
+          <label for="rating-inline">Rating:</label>
+          <ngb-rating [max]="5" [rate]="4" ></ngb-rating>
+        </div>
         <a routerLink="/book" class="btn btn-primary">Read Now</a>
       </div>
     </div>
@@ -104,6 +112,10 @@
         <p>{{123}} Views<span><i class="fa-solid fa-eye"></i></span></p>
         <br>
         <p>Price: {{123|currency:'INR'}}</p>
+        <div>
+          <label for="rating-inline">Rating:</label>
+          <ngb-rating [max]="5" [rate]="4" ></ngb-rating>
+        </div>
         <a routerLink="/book" class="btn btn-primary">Read Now</a>
       </div>
     </div>
@@ -121,6 +133,10 @@
         <p>{{123}} Views<span><i class="fa-solid fa-eye"></i></span></p>
         <br>
         <p>Price: {{123|currency:'INR'}}</p>
+        <div>
+          <label for="rating-inline">Rating:</label>
+          <ngb-rating [max]="5" [rate]="4" ></ngb-rating>
+        </div>
         <a routerLink="/book" class="btn btn-primary">Read Now</a>
       </div>
     </div>
@@ -138,6 +154,10 @@
         <p>{{123}} Views<span><i class="fa-solid fa-eye"></i></span></p>
         <br>
         <p>Price: {{123|currency:'INR'}}</p>
+        <div>
+          <label for="rating-inline">Rating:</label>
+          <ngb-rating [max]="5" [rate]="4" ></ngb-rating>
+        </div>
         <a routerLink="/book" class="btn btn-primary">Read Now</a>
       </div>
     </div>
@@ -155,6 +175,10 @@
         <p>{{123}} Views<span><i class="fa-solid fa-eye"></i></span></p>
         <br>
         <p>Price: {{123|currency:'INR'}}</p>
+        <div>
+          <label for="rating-inline">Rating:</label>
+          <ngb-rating [max]="5" [rate]="4" ></ngb-rating>
+        </div>
         <a routerLink="/book" class="btn btn-primary">Read Now</a>
       </div>
     </div>
@@ -172,9 +196,14 @@
         <p>{{123}} Views<span><i class="fa-solid fa-eye"></i></span></p>
         <br>
         <p>Price: {{123|currency:'INR'}}</p>
+         <div>
+            <label for="rating-inline">Rating:</label>
+            <ngb-rating [max]="5" [rate]="4" ></ngb-rating>
+          </div>
         <a routerLink="/book" class="btn btn-primary">Read Now</a>
       </div>
     </div>
   </div>
 </div>
+
 </body>
