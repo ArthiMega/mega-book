@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CRUDService } from '../service/crud.service';
 import { NavService } from '../service/nav.service';
+import { AuthService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-admin',
@@ -10,9 +11,21 @@ import { NavService } from '../service/nav.service';
 })
 export class AdminComponent implements OnInit {
   url = "/"
-  constructor(private http: HttpClient, private service :CRUDService, public nav:NavService) { }
-
+  users :any;
+  books:any;
+  constructor(private http: HttpClient, private service :CRUDService, public nav:NavService, private auth:AuthService) {
+    this.nav.hide();
+   }
+   logout(){
+    this.auth.logout();
+   }
   ngOnInit() {
+    this.service.getUserInfo().subscribe(response=>{
+      this.users= response;
+    });
+    this.service.getAllBooks().subscribe(res=>{
+      this.books = res;
+    });
   }
   selectedFiles!:File;
   selectImages(event:any){
@@ -42,5 +55,8 @@ export class AdminComponent implements OnInit {
    } else {
      alert("Please select a file first")
    }
+ }
+ getUser(){
+
  }
 }

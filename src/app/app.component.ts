@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CRUDService } from './service/crud.service';
+import { NavService } from './service/nav.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +12,7 @@ export class AppComponent {
   admin = true;
   posts: any;
   
-  constructor(public nav: CRUDService){}
+  constructor(public nav: NavService){}
   
   
 }

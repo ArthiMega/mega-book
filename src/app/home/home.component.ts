@@ -9,7 +9,7 @@ import { NavService } from '../service/nav.service';
 })
 export class HomeComponent implements OnInit {
   searchText:string ="";
-  bookList:any;
+  books:any;
   constructor(public nav:NavService, public crudservice:CRUDService) {
     this.nav.show();
    }
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit() {
     this.crudservice.getAllBooks().subscribe(data=>{
-      this.bookList = data;
+      this.books = data;
     });
   }
   url = '../../assets/images/';

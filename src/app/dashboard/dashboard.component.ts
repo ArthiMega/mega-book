@@ -9,11 +9,14 @@ import { NavService } from '../service/nav.service';
 })
 export class DashboardComponent implements OnInit {
 
+  books :any
   constructor(public nav:NavService, private crudservice:CRUDService) {
     this.nav.show();
    }
 
-  ngOnInit() {
+   ngOnInit(): void {
+    this.crudservice.getAllBooks().subscribe(response => {
+        this.books = response;
+    });
   }
-
 }

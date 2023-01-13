@@ -27,15 +27,18 @@
         />
       </a>
       <!-- Left links -->
-      <div *ngIf="nav.visible">
+      <div>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li routerLinkActive="active" class="nav-item">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li *ngIf="auth.isLoggedIn()" routerLinkActive="active" class="nav-item">
           <a class="nav-link" routerLink="/dashboard">Dashboard</a>
         </li>
-        <li class="nav-item">
+        <li routerLinkActive="active" class="nav-item">
           <a class="nav-link" routerLink="/aboutus">About Us</a>
         </li>
-        <li class="nav-item">
+        <li routerLinkActive="active" class="nav-item">
           <a class="nav-link" routerLink="/contactus">Contact Us</a>
         </li>
       </ul>
@@ -45,12 +48,12 @@
     <!-- Collapsible wrapper -->
 
     <!-- Right elements -->
-    <div class="d-flex align-items-center">
+    <div class="navbar w-100 order-3">
      
 
       <!-- Notifications -->
       
-      <div *ngIf="nav.visible" class="dropdown">
+      <!-- <div *ngIf="nav.visible" class="dropdown">
         <a
           class="text-reset"
           href="#"
@@ -58,24 +61,42 @@
           role="button"
           aria-expanded="false"
         >
-          <i class="fas fa-bell"></i>
-          <span class="badge rounded-pill badge-notification bg-danger">1</span>
         </a>
-      </div>
+        <i class="fas fa-bell"></i>
+        <span class="badge rounded-pill badge-notification bg-danger"></span>
+      </div> -->
       
-      <div *ngIf="nav.visible" class="d-flex align-items-center">
+      <div *ngIf="!auth.isLoggedIn(); else logout" class="navbar1">
         <a routerLink="/login">
-          <button type="button" id ="loginbtn" class="btn btn px-3 me-2">
+          <button type="button"class="btn btn me-3">
             Login
           </button>
         </a>
-        
         <a routerLink="/register">
-          <button type="button" class="btn btn-primary me-3">
+          <button type="button"class="btn btn-primary me-3">
             Sign up for free
           </button>
         </a>
-      </div>
+      </div>  
+      <div>
+      <ng-template #logout class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar1">
+          <li  >
+            <i class="	fas fa-user-circle fa-2x" aria-hidden="true"></i>
+              <ul>
+                <li><a routerLink="profile">Profile</a></li>
+                <li><a routerLink="book">My Readings</a></li>
+                <li><a (click)="auth.logout()">Log out</a></li>
+              </ul>
+          </li>
+        </ul>
+        <!-- <a>
+          <button type="button" class="btn btn-primary px-3 me-2" (click)="auth.logout()">
+            Logout
+          </button>
+        </a> -->
+      </ng-template>
+    </div>
     </div>
       
       <!-- Avatar -->

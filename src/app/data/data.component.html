@@ -1,18 +1,9 @@
-<router-outlet>|</router-outlet>
-<h3>fetching data from services</h3>
-<table style="width: 50%;" class="table table bordered">
-    <thead>
-        <th>Name</th>
-        <th>Rent</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of userList">
-            <td>{{item.name}}</td>
-            <td>{{item.rent}}</td>
-        </tr>
-    </tbody>
-</table>
 
-<ul>
-    <li *ngFor="let item of vList">{{item.id}} - {{item.name}} - {{item.url}}</li>
-</ul>
+<div>
+
+<i class="	fas fa-user-circle fa-10x" aria-hidden="true"></i>
+</div>
+<h5 class="mb-2"><strong> Hi {{user|json}}</strong></h5>
+<p class="text-muted"><span class="badge bg-primary">PRO</span></p>
+<p>{{user.name}}</p>
+<p>{{user.email}}</p>

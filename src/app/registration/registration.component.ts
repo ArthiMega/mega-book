@@ -21,6 +21,7 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
+      name:['',Validators.required],
       email:['', Validators.required],
       password:['',Validators.required],
       conformpassword:['',Validators.required]
@@ -28,6 +29,7 @@ export class RegistrationComponent implements OnInit {
   }  
   
   postUserDetails(){
+    this.registrationModelObj.name = this.formValue.value.name;
     this.registrationModelObj.email = this.formValue.value.email;
     this.registrationModelObj.password = this.formValue.value.password;
     this.registrationModelObj.confirmpassword = this.formValue.value.confirmpassword;
@@ -39,6 +41,7 @@ export class RegistrationComponent implements OnInit {
         // let ref = document.getElementById('redirect');
         // ref?.click();
         this.formValue.reset();
+        alert("registered")
         this.route.navigate(['dashboard']);
       },
       error =>{

@@ -16,16 +16,10 @@ export class CRUDService {
   constructor(private http: HttpClient) {
     
    }
-  getUserInfo():Observable<User[]>{
-    console.log('getUser '+ this.baseURL + ' user-data');
-    return this.http.get<User[]>(this.baseURL+'user-data')
+  getUserInfo(){
+    return this.http.get(this.baseURL+'user-data');
   }
-  addUser(user:User):Observable<any>{
-    const headers = {'content-type':'application/json'}
-    const body = JSON.stringify(user);
-    console.log(body);
-    return this.http.post(this.baseURL+'user',body,{'headers':headers})
-  }
+
   getAllVidios(){
     return this.http.get(this.baseURL);
   }
@@ -61,7 +55,7 @@ export class CRUDService {
     return this.http.request(req);
   }
   getFiles(): Observable<any> {
-    return this.http.get(`${this.baseURL}/v_data`);
+    return this.http.get(`${this.baseURL}v_data`);
   }
 }
  

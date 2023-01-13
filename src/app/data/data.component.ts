@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CRUDService } from '../service/crud.service';
 import { Observable } from 'rxjs';
+import { AuthService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-data',
@@ -8,26 +9,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./data.component.css']
 })
 export class DataComponent implements OnInit {
-  userList :any;
-  vList:any;
-  data ={
-    "code":0,
-    "name":"Arthi",
-    "email":"arthi@example.com",
-    "password":"Arthi@123",
-    "mobileNo":9361835204
-  }
-  constructor(private service: CRUDService) { 
-    this.userList = service.getUserInfo();
-    console.log(this.userList);
-    this.vList = service.getAllVidios().subscribe(result=>{
-      this.vList = result;
+user!:any
+constructor(private auth:AuthService){}
+  ngOnInit() {
+    this.auth.getIndividualUser().subscribe(response=>{
+      this.user = response;
     })
-    console.log(this.vList);
   }
 
-  ngOnInit() {
-  }
   // save(){
   //   this.service.saveData(data:any)
   // }
