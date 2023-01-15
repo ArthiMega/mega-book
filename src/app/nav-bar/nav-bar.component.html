@@ -66,7 +66,7 @@
         <span class="badge rounded-pill badge-notification bg-danger"></span>
       </div> -->
       
-      <div *ngIf="!auth.isLoggedIn(); else logout" class="navbar1">
+      <div *ngIf="!auth.isLoggedIn(); else logout1" class="navbar1">
         <a routerLink="/login">
           <button type="button"class="btn btn me-3">
             Login
@@ -77,12 +77,12 @@
             Sign up for free
           </button>
         </a>
-      </div>  
-      <div>
-      <ng-template #logout class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      </div>            
+    
+      <ng-template #logout1 class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar1">
-          <li  >
-            <i class="	fas fa-user-circle fa-2x" aria-hidden="true"></i>
+          <li>profile
+            <i class="fas fa-user-circle fa-2x" aria-hidden="true"></i>
               <ul>
                 <li><a routerLink="profile">Profile</a></li>
                 <li><a routerLink="book">My Readings</a></li>
@@ -97,7 +97,7 @@
         </a> -->
       </ng-template>
     </div>
-    </div>
+  
       
       <!-- Avatar -->
 

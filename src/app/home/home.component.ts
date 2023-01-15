@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   searchText:string ="";
   books:any;
   constructor(public nav:NavService, public crudservice:CRUDService) {
-    this.nav.show();
+    // this.nav.show();
    }
   onSearchTextEnterd(searchValue:string){
     this.searchText = searchValue;
@@ -22,5 +22,4 @@ export class HomeComponent implements OnInit {
       this.books = data;
     });
   }
-  url = '../../assets/images/';
 }

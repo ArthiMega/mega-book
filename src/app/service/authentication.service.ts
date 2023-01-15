@@ -9,14 +9,15 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   baseURL = "http://localhost:3000/";
   userId!:number;
+  admin:boolean = false;
   constructor(private router: Router, private http: HttpClient) {}
 
   setToken(token: string): void {
-    localStorage.setItem('token', token);
+    sessionStorage.setItem('token', token);
   }
 
   getToken(): string | null {
-    return localStorage.getItem('token');
+    return sessionStorage.getItem('token');
   }
 
   isLoggedIn() {
@@ -24,21 +25,19 @@ export class AuthService {
   }
 
   logout() {
-    if(this.getToken()=='zyxwvutsrqponmlkjihgfedcba'){
-    localStorage.removeItem('token');
-    this.router.navigate(['admin']);
-    }
-    else{
-      localStorage.removeItem('token');
-      this.router.navigate(['home']);
-    }
+      sessionStorage.removeItem('token');
+      this.router.navigate(['login']);
   }
 
+  isAdmin(){
+    return this.getToken()=='zyxwvutsrqponmlkjihgfedcba';
+  }
   login(email:string, password:string ){
   if(email === "arthi@test.com" && password ==="567"){
     this.setToken('zyxwvutsrqponmlkjihgfedcba');
     alert("Logged in successfully!");
-    this.router.navigate(['admin']);
+    this.isAdmin();
+    this.router.navigate(['adminpages']);
   }
   else{
   this.http.get<any>("http://localhost:3000/user-data")

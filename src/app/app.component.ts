@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './service/authentication.service';
 import { CRUDService } from './service/crud.service';
 import { NavService } from './service/nav.service';
 @Component({
@@ -12,7 +13,10 @@ export class AppComponent {
   admin = true;
   posts: any;
   
-  constructor(public nav: NavService){}
+  constructor(public nav: NavService, private auth:AuthService){}
+  isAdmn(){
+    return this.auth.isAdmin()
+   }
   
   
 }

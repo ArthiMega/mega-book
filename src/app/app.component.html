@@ -1,6 +1,6 @@
-<app-nav-bar *ngIf="nav.visible"></app-nav-bar>
+<app-nav-bar *ngIf="!isAdmn()"></app-nav-bar>
 <!-- <app-data></app-data> -->
-<app-admin *ngIf="!admin"></app-admin>
+<!-- <app-admin *ngIf="!admin"></app-admin> -->
 <router-outlet></router-outlet>
 <!-- Footer -->
 <footer class="bg-dark text-center text-white">

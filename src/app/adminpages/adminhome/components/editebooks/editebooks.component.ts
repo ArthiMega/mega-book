@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CRUDService } from 'src/app/service/crud.service';
 
 @Component({
   selector: 'app-editebooks',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditebooksComponent implements OnInit {
 
-  constructor() { }
+  books!:any;
+  constructor(private crudservice:CRUDService) { }
+  viewBooks(){
+    this.crudservice.getAllBooks().subscribe(response=>{
+      this.books = response;
+    })
+  }
 
   ngOnInit() {
+    this.viewBooks();
   }
 
 }
